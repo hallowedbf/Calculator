@@ -12,10 +12,13 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
-        int currentEntry = 0;
-        int operationNumber = 0;
+        decimal currentEntry = 0;
+        decimal operationNumber = 0;
 
         bool isAdding = false;
+        bool isMultiplying = false;
+        bool isSubtracting = false;
+        bool isDividing = false;
 
         public Form1()
         {
@@ -74,20 +77,78 @@ namespace Calculator
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            currentEntry = int.Parse(richTextBox1.Text);
+            currentEntry = decimal.Parse(richTextBox1.Text);
             richTextBox1.Clear();
             isAdding = true;
+            isMultiplying = false;
+            isSubtracting = false;
+            isDividing = false;
         }
 
         private void equalsButton_Click(object sender, EventArgs e)
         {
-            operationNumber = int.Parse(richTextBox1.Text);
+            operationNumber = decimal.Parse(richTextBox1.Text);
             if(isAdding)
             {
                 richTextBox1.Text = (currentEntry + operationNumber).ToString();
                 operationNumber = 0;
                 isAdding = false;
+                return;
             }
+
+            if (isMultiplying)
+            {
+                richTextBox1.Text = (currentEntry * operationNumber).ToString();
+                operationNumber = 0;
+                isMultiplying = false;
+                return;
+            }
+
+            if (isSubtracting)
+            {
+                richTextBox1.Text = (currentEntry - operationNumber).ToString();
+                operationNumber = 0;
+                isSubtracting = false;
+                return;
+            }
+
+            if(isDividing)
+            {
+                richTextBox1.Text = (currentEntry / operationNumber).ToString();
+                operationNumber = 0;
+                isDividing = false;
+                return;
+            }
+        }
+
+        private void multiButton_Click(object sender, EventArgs e)
+        {
+            currentEntry = decimal.Parse(richTextBox1.Text);
+            richTextBox1.Clear();
+            isAdding = false;
+            isMultiplying = true;
+            isSubtracting = false;
+            isDividing = false;
+        }
+
+        private void minusButton_Click(object sender, EventArgs e)
+        {
+            currentEntry = decimal.Parse(richTextBox1.Text);
+            richTextBox1.Clear();
+            isAdding = false;
+            isMultiplying = false;
+            isSubtracting = true;
+            isDividing = false;
+        }
+
+        private void divisionButton_Click(object sender, EventArgs e)
+        {
+            currentEntry = decimal.Parse(richTextBox1.Text);
+            richTextBox1.Clear();
+            isAdding = false;
+            isMultiplying = false;
+            isSubtracting = false;
+            isDividing = true;
         }
     }
 }

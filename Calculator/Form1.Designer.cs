@@ -111,6 +111,7 @@
             this.divisionButton.TabIndex = 4;
             this.divisionButton.Text = "➗";
             this.divisionButton.UseVisualStyleBackColor = true;
+            this.divisionButton.Click += new System.EventHandler(this.divisionButton_Click);
             // 
             // button7
             // 
@@ -158,6 +159,7 @@
             this.multiButton.TabIndex = 8;
             this.multiButton.Text = "X";
             this.multiButton.UseVisualStyleBackColor = true;
+            this.multiButton.Click += new System.EventHandler(this.multiButton_Click);
             // 
             // button4
             // 
@@ -205,6 +207,7 @@
             this.minusButton.TabIndex = 12;
             this.minusButton.Text = "-";
             this.minusButton.UseVisualStyleBackColor = true;
+            this.minusButton.Click += new System.EventHandler(this.minusButton_Click);
             // 
             // button1
             // 

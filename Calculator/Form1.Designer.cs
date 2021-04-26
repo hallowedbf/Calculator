@@ -58,6 +58,7 @@
             // richTextBox1
             // 
             this.richTextBox1.DetectUrls = false;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(8, 12);
             this.richTextBox1.Multiline = false;
             this.richTextBox1.Name = "richTextBox1";
